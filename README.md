@@ -204,6 +204,12 @@ This course is licensed under the **Creative Commons Attribution-NonCommercial-S
 
 You are free to share and adapt this material for non-commercial purposes, provided you give appropriate credit and distribute any derivative works under the same license.
 
-→ [Full license text](./LICENSE)
+→ [Full license text](./LICENSE.md)
 
 ↑ [Back to Table of Contents](#table-of-contents)
+
+---
+
+<sub>© 2026 UncleJS & Course OpenTofu contributors — licensed under [CC BY-NC-SA 4.0](LICENSE.md).<br>
+You may share and adapt this material for non-commercial purposes with attribution.<br>
+SPDX-License-Identifier: CC-BY-NC-SA-4.0</sub>

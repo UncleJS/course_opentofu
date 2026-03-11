@@ -1,0 +1,79 @@
+# ─── Credentials & Secrets ────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# Config files that may contain usernames, passwords, or API keys
+*.credentials
+*.credentials.json
+credentials.json
+credentials.yaml
+credentials.yml
+auth.json
+auth.yaml
+secrets.json
+secrets.yaml
+secrets.yml
+*secret*
+*password*
+*passwd*
+*apikey*
+*api_key*
+
+# Terraform / OpenTofu backend configs often contain credentials
+backend.hcl
+backend.config
+backend.tfvars
+*backend*.tfvars
+
+# tfvars files may contain sensitive values — keep examples, ignore the rest
+*.tfvars
+!*.tfvars.example
+!example.tfvars
+
+# ─── OpenTofu / Terraform ─────────────────────────────────────────────────────
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.*
+*.tfstate
+*.tfstate.backup
+*.tfplan
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ─── OS Files ─────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# ─── Editor / IDE ─────────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Node / Python (for CI tooling or testing) ────────────────────────────────
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# ─── Build & Temp ─────────────────────────────────────────────────────────────
+dist/
+build/
+*.log
+*.tmp
+*.temp
