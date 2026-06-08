@@ -335,7 +335,7 @@ Running `tofu init` in a directory performs several operations:
 ```
 .terraform/
 ├── providers/
-│   └── registry.terraform.io/
+│   └── registry.opentofu.org/
 │       └── hashicorp/
 │           └── local/
 │               └── 2.5.1/
@@ -362,7 +362,7 @@ The lock file records the exact provider versions and their checksums for multip
 
 ```hcl
 # .terraform.lock.hcl
-provider "registry.terraform.io/hashicorp/local" {
+provider "registry.opentofu.org/hashicorp/local" {
   version     = "2.5.1"
   constraints = "~> 2.5"
   hashes = [

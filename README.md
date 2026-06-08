@@ -100,7 +100,7 @@ course_opentofu/
 ├── GLOSSARY.md                        # ~60 IaC / OpenTofu terms
 └── modules/
     ├── 01-introduction/
-    │   ├── README.md                  # Theory + exercises
+    │   ├── 01-introduction.md         # Lesson: theory + exercises (each module: NN-name.md)
     │   └── examples/                  # Runnable .tf files
     ├── 02-installation/
     ├── 03-providers-and-resources/

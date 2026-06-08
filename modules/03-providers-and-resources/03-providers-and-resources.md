@@ -58,12 +58,13 @@ A **provider** is a plugin that implements the API integration for a specific pl
 Every provider has a source address in the format `namespace/type`:
 
 ```
-hashicorp/local    → registry.terraform.io/hashicorp/local
-hashicorp/null     → registry.terraform.io/hashicorp/null
-hashicorp/random   → registry.terraform.io/hashicorp/random
+hashicorp/local    → registry.opentofu.org/hashicorp/local
+hashicorp/null     → registry.opentofu.org/hashicorp/null
+hashicorp/random   → registry.opentofu.org/hashicorp/random
 ```
 
-The registry hostname (`registry.terraform.io`) is implied when omitted.
+The registry hostname (`registry.opentofu.org`) is implied when omitted. OpenTofu uses its own
+registry by default, which serves the `hashicorp/*` providers (among many others).
 
 ### Provider Schema
 
@@ -75,7 +76,7 @@ When you run `tofu init`, OpenTofu downloads the provider binary and queries its
 You can inspect a provider's schema directly:
 
 ```bash
-tofu providers schema -json | jq '.provider_schemas["registry.terraform.io/hashicorp/local"]'
+tofu providers schema -json | jq '.provider_schemas["registry.opentofu.org/hashicorp/local"]'
 ```
 
 > **Under the hood:** Provider schemas are fetched by calling the `GetProviderSchema` gRPC method on the provider binary. OpenTofu caches the schema in memory for the duration of the run and uses it to validate your HCL before sending any requests.

@@ -548,32 +548,31 @@ locals {
 }
 ```
 
-### `defaults()` Function for Deep Merge
+### Defaults for Optional Object Attributes
 
-The `defaults()` function performs a deep merge of an object value with default values:
+To give optional object attributes default values, pass the default as the **second argument to
+`optional()`** directly in the type constraint. OpenTofu fills in any omitted attribute with that
+default — including nested objects — so you don't need a separate merge step.
 
 ```hcl
 variable "server" {
   type = object({
-    name    = string
-    port    = optional(number)
-    tls     = optional(object({
-      enabled  = optional(bool)
-      min_version = optional(string)
-    }))
+    name = string
+    port = optional(number, 8080)
+    tls = optional(object({
+      enabled     = optional(bool, false)
+      min_version = optional(string, "TLS1.2")
+    }), {}) # the trailing {} makes the whole tls object optional and lets its own defaults apply
   })
 }
 
-locals {
-  server_with_defaults = defaults(var.server, {
-    port = 8080
-    tls = {
-      enabled     = false
-      min_version = "TLS1.2"
-    }
-  })
-}
+# Given input { name = "web" }, var.server resolves to:
+#   { name = "web", port = 8080, tls = { enabled = false, min_version = "TLS1.2" } }
 ```
+
+> **Note:** Older Terraform exposed a `defaults()` function for this, but it was an experiment that
+> was removed once optional attributes went GA. Use the two-argument `optional(type, default)` form
+> shown above — it is the supported approach in OpenTofu.
 
 ### `templatefile()` for Rendered Summaries
 

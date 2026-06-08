@@ -185,9 +185,9 @@ title("hello world")  # "Hello World"
 
 # Trimming
 trimspace("  hello  ")     # "hello"
-trimprefix("hello!", "!")  # "hello!"  — trims from end
-trimsuffix("!hello", "!")  # "!hello"  — trims from start
-trim("__hello__", "_")     # "hello"   — trims chars from both ends
+trimprefix("!hello", "!")  # "hello"   — removes the prefix (from the start)
+trimsuffix("hello!", "!")  # "hello"   — removes the suffix (from the end)
+trim("__hello__", "_")     # "hello"   — trims the given chars from both ends
 
 # Other
 chomp("hello\n")           # "hello" — removes trailing newline

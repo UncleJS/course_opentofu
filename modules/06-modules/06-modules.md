@@ -133,7 +133,7 @@ The `//` separates the repository URL from the subdirectory within the repo.
 ### Registry Sources
 
 ```hcl
-# Public registry (registry.terraform.io)
+# Public registry (registry.opentofu.org by default)
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "~> 5.0"

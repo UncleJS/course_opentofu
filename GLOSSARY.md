@@ -296,7 +296,7 @@ A directory of `.tf` files that are treated as a single unit. Modules accept inp
 → See [Module 06 — Modules](./modules/06-modules/)
 
 ### Module Registry
-A versioned repository of reusable modules. The public registry is at `registry.terraform.io`. Module sources from the registry use the format `namespace/module-name/provider`.
+A versioned repository of reusable modules. OpenTofu's default public registry is at `registry.opentofu.org`. Module sources from the registry use the format `namespace/module-name/provider`.
 → See [Module 06 — Modules](./modules/06-modules/)
 
 ### `moved` Block

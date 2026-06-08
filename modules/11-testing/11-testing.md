@@ -152,8 +152,8 @@ tofu init
 # Run all tests (discovers *.tftest.hcl automatically)
 tofu test
 
-# Run a specific test file
-tofu test -filter=tests/state_management.tftest.hcl
+# Run a specific test file (this module ships tests/basic.tftest.hcl and tests/advanced.tftest.hcl)
+tofu test -filter=tests/basic.tftest.hcl
 
 # Verbose output (shows each assert result)
 tofu test -verbose

@@ -72,7 +72,7 @@ A common question: why not just query the provider on every run instead of maint
 
 For each managed resource, state records:
 - The **resource address** (`local_file.config`)
-- The **provider** that manages it (`registry.terraform.io/hashicorp/local`)
+- The **provider** that manages it (`registry.opentofu.org/hashicorp/local`)
 - The **schema version** of the resource at creation time
 - All **attribute values** (both input arguments and computed attributes)
 - The **dependencies** — what other resources this resource depended on
@@ -120,7 +120,7 @@ The state file is a JSON document. Understanding its structure helps you diagnos
   "mode": "managed",
   "type": "local_file",
   "name": "config",
-  "provider": "provider[\"registry.terraform.io/hashicorp/local\"]",
+  "provider": "provider[\"registry.opentofu.org/hashicorp/local\"]",
   "instances": [
     {
       "schema_version": 0,
@@ -185,7 +185,7 @@ In-memory state after refresh: content = "Hello, World!"
 # Skip the provider read — use state file as-is
 tofu plan -refresh=false
 
-# Only refresh state — don't plan changes, don't apply
+# Reconcile state with real infrastructure — makes no resource changes
 tofu apply -refresh-only
 ```
 
